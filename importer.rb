@@ -27,6 +27,7 @@ release = {
 tracks = response.tracklist.each_with_index.map do |track, i|
   {
     id: [release[:id], i].join('-'),
+    release: release[:id],
     sequence: i,
     title: track.title,
     duration: track.duration,
