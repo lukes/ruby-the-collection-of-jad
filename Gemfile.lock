@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    discogs-wrapper (2.1.4)
+      hashie (~> 3.0)
+      oauth (~> 0.4.7)
+    hashie (3.4.3)
+    oauth (0.4.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  discogs-wrapper
+
+BUNDLED WITH
+   1.10.6
