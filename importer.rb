@@ -1,4 +1,5 @@
 require 'discogs-wrapper'
+require 'json'
 
 discogs_api = Discogs::Wrapper.new("TheCollectionOfJAD/1.0")
 
@@ -37,13 +38,13 @@ release[:tracks] = tracks.map { |t| t[:id] }
 
 PATH = File.dirname(__FILE__)
 
-File.open(File.join(PATH, 'imported', 'releases', release[:id].to_s), 'w') do |f|
+File.open(File.join(PATH, 'imported', 'releases', "#{release[:id].to_s}.json"), 'w') do |f|
   f.write(JSON.pretty_generate(release))
   puts " + Imported Release: #{release[:title]}"
 end
 
 tracks.each do |track|
-  File.open(File.join(PATH, 'imported', 'tracks', track[:id].to_s), 'w') do |f|
+  File.open(File.join(PATH, 'imported', 'tracks', "#{track[:id].to_s}.json"), 'w') do |f|
     f.write(JSON.pretty_generate(track))
   end
   puts " + Imported Track #{track[:position]}: #{track[:title]}"
