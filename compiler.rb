@@ -8,7 +8,7 @@ def read_imported(subdir)
   end
 end
 
-File.open(File.join(PATH, 'compiled', 'data.js'), 'w+') do |f|
+File.open(File.join(PATH, 'compiled', 'data.json'), 'w+') do |f|
   data = {}
   data[:releases] = read_imported('releases')
   data[:tracks] = read_imported('tracks')
