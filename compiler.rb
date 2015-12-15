@@ -10,7 +10,7 @@ end
 
 File.open(File.join(PATH, 'compiled', 'data.json'), 'w+') do |f|
   data = {}
-  data[:releases] = read_imported('releases')
-  data[:tracks] = read_imported('tracks')
+  data[:releases] = read_imported('releases').sort_by {|r| r['title']}
+  data[:tracks] = read_imported('tracks').sort_by {|r| r['sequence']}
   f.write(JSON.generate(data))
 end
