@@ -1,0 +1,27 @@
+{
+  "id": "manual1",
+  "title": "Dancing with Barnabas von Géczy",
+  "manual": true,
+  "manual_reason": "Unable to be found online, possible rare.",
+  "genres": [
+    "Pop"
+  ],
+  "artist": "Barnabas von Géczy",
+  "country": "Australia",
+  "format": "10\" EP Album",
+  "label": "Polydor Records",
+  "tracks": [
+    "manual1-0",
+    "manual1-1",
+    "manual1-2",
+    "manual1-3",
+    "manual1-4",
+    "manual1-5",
+    "manual1-6",
+    "manual1-7",
+    "manual1-8",
+    "manual1-9",
+    "manual1-10",
+    "manual1-11"
+  ]
+}
