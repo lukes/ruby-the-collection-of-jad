@@ -37,7 +37,8 @@ tracks = response.tracklist.each_with_index.map do |track, i|
     sequence: i,
     title: track.title,
     duration: track.duration,
-    position: track.position
+    position: track.position,
+    artist: track.artists.first.name
   }
 end
 
