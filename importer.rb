@@ -13,6 +13,11 @@ if response.artists.length > 1
   exit
 end
 
+if response.labels.length > 1
+  puts "More than one label for this release"
+  exit
+end
+
 release = {
   id: response.id,
   title: response.title,
@@ -21,7 +26,8 @@ release = {
   artist: response.artists.first.name,
   country: response.country,
   format: response.formats.first.descriptions.join(' '),
-  label: 'TODO'
+  label: response.labels.first.name,
+  catno: response.labels.first.catno
 }
 
 tracks = response.tracklist.each_with_index.map do |track, i|
