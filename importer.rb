@@ -58,3 +58,12 @@ tracks.each do |track|
 end
 
 puts "Done."
+
+puts 'Recompile? [Y,n]'
+prompt = STDIN.gets.chomp.downcase
+
+if ["y", ""].include?(prompt)
+  puts "Compiling."
+  `ruby compiler.rb`
+  puts "Done."
+end
