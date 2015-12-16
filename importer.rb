@@ -8,10 +8,10 @@ code = STDIN.gets.chomp.downcase
 
 response = discogs_api.get_release(code)
 
-if response.artists.length > 1
-  puts "More than one artist for this release"
-  exit
-end
+# if response.artists.length > 1
+#   puts "More than one artist for this release"
+#   exit
+# end
 
 if response.labels.length > 1
   puts "More than one label for this release"
@@ -37,9 +37,10 @@ tracks = response.tracklist.each_with_index.map do |track, i|
     sequence: i,
     title: track.title,
     duration: track.duration,
-    position: track.position,
-    artist: track.artists.first.name
-  }
+    position: track.position
+  }.tap do |h|
+    h[:artist] = track.artists.first.name if track.artists
+  end
 end
 
 release[:tracks] = tracks.map { |t| t[:id] }
