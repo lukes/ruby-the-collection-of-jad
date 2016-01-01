@@ -8,10 +8,10 @@ code = STDIN.gets.chomp.downcase
 
 response = discogs_api.get_release(code)
 
-# if response.artists.length > 1
-#   puts "More than one artist for this release"
-#   exit
-# end
+if response.artists.length > 1
+  puts "More than one artist for this release"
+  exit
+end
 
 if response.labels.length > 1
   puts "More than one label for this release"
